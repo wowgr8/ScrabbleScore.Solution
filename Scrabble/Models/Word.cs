@@ -6,10 +6,13 @@ namespace Scrabble.Models
   public class Word
   { 
     public string Text {get; set; }
+    public char[] Letters {get; set;}
 
     public Word(string wordPlayed)
     {
       this.Text = wordPlayed;
+      this.Letters = wordPlayed.ToCharArray();
+      Console.WriteLine("Letters: " + this.Letters);
     }
 
     private static Dictionary<char, int> Scores = new Dictionary<char, int>() 
