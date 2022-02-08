@@ -5,10 +5,13 @@ namespace Scrabble.Models
 {
   public class Word
   { 
+    public string Text {get; set; }
+
     public Word(string wordPlayed)
     {
-
+      this.Text = wordPlayed;
     }
+
     private static Dictionary<char, int> Scores = new Dictionary<char, int>() 
     {
       {'a', 1}, 
