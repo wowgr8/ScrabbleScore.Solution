@@ -3,10 +3,12 @@ using System.Collections.Generic;
 
 namespace Scrabble.Models
 {
+  
   public class Word
   { 
     public string Text {get; set; }
     public char[] Letters {get; set;}
+
 
     public Word(string wordPlayed)
     {
@@ -14,12 +16,38 @@ namespace Scrabble.Models
       Letters = wordPlayed.ToCharArray();
     }
 
+    
+
     public int GetScore()
     {
       int score = 0;
-      foreach(char letter in Letters)
+      string validatedWord = "";
+      try
       {
-        score += Scores[letter];
+        foreach(char letter in Letters)
+        {
+          if (Scores.ContainsKey(letter))
+          {
+            score += Scores[letter];
+            validatedWord += letter;
+          }
+          else
+          {
+            Console.WriteLine("Reminder: " + letter + " is not a scrabble letter dummy!");
+          }
+        }
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine("Message = {0}", ex.Message);
+        Console.WriteLine("Source = {0}", ex.Source);
+        Console.WriteLine("StackTrace = {0}", ex.StackTrace);
+        Console.WriteLine("TargetSite = {0}", ex.TargetSite);
+      }
+
+      if (validatedWord.Length < Letters.Length)
+      {
+        Console.WriteLine("(score calculated for '" + validatedWord + "')");
       }
       return score;
     }
