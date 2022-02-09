@@ -10,9 +10,20 @@ namespace Scrabble.Models
 
     public Word(string wordPlayed)
     {
-      this.Text = wordPlayed;
-      this.Letters = wordPlayed.ToCharArray();
-      Console.WriteLine("Letters: " + this.Letters);
+      Text = wordPlayed;
+      Letters = wordPlayed.ToCharArray();
+      Console.WriteLine("Letters: " + Letters);
+    }
+
+    public int GetScore()
+    {
+      int score = 0;
+      foreach(char letter in Letters)
+      {
+        Console.WriteLine(letter);
+        score += Scores[letter];
+      }
+      return score;
     }
 
     private static Dictionary<char, int> Scores = new Dictionary<char, int>() 
