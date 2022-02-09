@@ -46,5 +46,18 @@ namespace Scrabble.Tests
       // Assert
       Assert.AreEqual(newWord.Letters.Length,4);
     }
+
+    [TestMethod]
+    public void GetScore_ReturnScore_8()
+    {
+      //Arrange
+      string sample = "word";
+      
+      //Act
+      Word newWord = new Word(sample);
+
+      // Assert
+      Assert.AreEqual(newWord.GetScore(),8);
+    }
   }
 }
