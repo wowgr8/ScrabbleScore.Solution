@@ -29,8 +29,7 @@ Q, Z                               10
 
 #### MVP Objective
 
-Receive input from a user identifying moves played by two people in a round of Rock, Paper, Scissors, then identify and display who was the winner of that round.
-
+Calculate and return a total score for a word by adding the scrabble scores of the letters in that word.
 
 ### User Interface
 
@@ -43,7 +42,7 @@ This application displays text through the terminal. It prompts the user for a w
 - Navigate to the parent directory of your preference.
 
 - Clone the application on your computer by entering: 
-```git clone https://github.com/wowgr8/Scrabblescore.Solution```
+```git clone https://github.com/wowgr8/ScrabbleScore.Solution```
 in the terminal
 - Run the command ```dotnet build```.
 - Run the command ```dotnet run```.
