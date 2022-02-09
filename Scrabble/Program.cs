@@ -8,10 +8,10 @@ namespace Scrabble
     public static void Main()
     {
       Console.WriteLine("Welcome to Scrabble Score!");
-      Console.WriteLine("Enter a word to see it's score:");
-      string entered = Console.ReadLine();
+      Console.WriteLine("Enter a word to see its score:");
+      string entered = Console.ReadLine().ToLower();
       Word objWord = new Word(entered);
-      Console.WriteLine("The Scrabble score for " + entered + " is: " + objWord.GetScore());
+      Console.WriteLine("The Scrabble score for '" + entered + "' is: " + objWord.GetScore());
     }
   }
 }
