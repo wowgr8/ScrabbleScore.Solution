@@ -12,7 +12,6 @@ namespace Scrabble.Models
     {
       Text = wordPlayed;
       Letters = wordPlayed.ToCharArray();
-      Console.WriteLine("Letters: " + Letters);
     }
 
     public int GetScore()
@@ -20,7 +19,6 @@ namespace Scrabble.Models
       int score = 0;
       foreach(char letter in Letters)
       {
-        Console.WriteLine(letter);
         score += Scores[letter];
       }
       return score;
